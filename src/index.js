@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import CompleteApp from './SimpleApp';
-import SectionGallery from "./SimpleApp/Section"
-import {SectionFooter,SectionAchievement} from "./SimpleApp/Section"
-
+import GreetComponent from './PropsDemo/GreetComponent';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
 <>
-<CompleteApp></CompleteApp>
-<SectionGallery></SectionGallery>
-<SectionFooter></SectionFooter>
-<SectionAchievement></SectionAchievement>
+<GreetComponent username='john' email="john@gmail.com"></GreetComponent>
+<GreetComponent username='peter' email="john@gmail.com"></GreetComponent>
+
 </>
 );
 
