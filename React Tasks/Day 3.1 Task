@@ -1,0 +1,15 @@
+Task 1:
+
+Default : loggeIn - true (Parent Component)
+
+true -> Dashboard  (seperate component)
+false- > signin(sep comp) Page ( signup) (comp)
+
+Task 2:
+
+counter Component
+
++ 0 -
+
++ -> state by 1
+- update by -1
