@@ -22,8 +22,14 @@ class LifeCycleMethods extends React.Component{
    increment=()=>{
     this.setState({count:this.state.count+1})
    }
-   componentDidUpdate(){
-    console.log("re render")
+   getSnapshotBeforeUpdate(prevProps,prevState){
+    console.log("SS")
+    console.log(prevState)
+    return "this from ss"
+   }
+   componentDidUpdate(prevProps,prevState,snapvalue){
+    console.log("re render",snapvalue)
+    this.setState({msg:"reached end"})
    }
     render(){
         console.log('inside render')
@@ -31,6 +37,7 @@ class LifeCycleMethods extends React.Component{
             <div>
                 <h1>LifeCycleMethods</h1>
                 <h2>{this.state.msg}</h2>
+                
                 <h3> no of times rendered {this.state.count }</h3>
                 <button onClick={this.increment}>+</button>
             </div>
