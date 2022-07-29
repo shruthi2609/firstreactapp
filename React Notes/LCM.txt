@@ -1,0 +1,20 @@
+3 phases:
+1.Mounting
+
+constructor
+DS method
+render
+componentDidMount
+
+2.Update
+
+DS method
+shouldComponentUpdate
+render
+getSnapshotBeforeUpdate
+componentDidUpdate
+
+
+
+3.UnMounting
+componentWillUnMount()
