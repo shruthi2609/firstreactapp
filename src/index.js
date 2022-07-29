@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import ContactManager from './ContactManager/ContactManager';
+import LifeCycleMethods from './LifeCycleMethods/LifeCycleMethods';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
 <>
-<ContactManager></ContactManager>
-
+<LifeCycleMethods initialMsg="final value"></LifeCycleMethods>
 </>
 );
 
