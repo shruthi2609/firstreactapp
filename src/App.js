@@ -1,12 +1,15 @@
-import ElectronicProducts from "./WOHOC/ElectronicProducts"
-import productDetails from './WOHOC/edata'
+
 import clothing from './WOHOC/cdata'
-import ClothingProducts from "./WOHOC/ClothingProducts"
+import electronic from './WOHOC/edata'
+import FilterProductsClothing from "./WHOC/FilterProductsClothing"
+import FilterProductsElectronic from './WHOC/FilterProductsElectronic'
+
 function App(){
     return(
         <div>
-           {/* <ElectronicProducts data={productDetails}></ElectronicProducts>*/}
-           <ClothingProducts data={clothing}></ClothingProducts>
+          <FilterProductsClothing data={clothing} storename="Clothing Store"></FilterProductsClothing>
+          <FilterProductsClothing data={electronic} storename="Electronic Store"></FilterProductsClothing>
+       {/*  <FilterProductsElectronic data={electronic} storename='Electronic Store'></FilterProductsElectronic>*/}
         </div>
     )
 }
