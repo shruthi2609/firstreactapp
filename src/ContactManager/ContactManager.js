@@ -8,17 +8,20 @@ class ContactManager extends React.Component{
                 {
                     fname:"john",
                     email:"john@gmail.com",
-                    phone:2938293892
+                    phone:2938293892,
+                    id:0
                 },
                 {
                     fname:"peter",
                     email:"peter@gmail.com",
-                    phone:2938293892
+                    phone:2938293892,
+                    id:1
                 },
                 {
                     fname:"harry",
                     email:"harry@gmail.com",
-                    phone:2938293892
+                    phone:2938293892,
+                    id:2
                 },
 
             ]
