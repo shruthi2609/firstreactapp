@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from 'prop-types'
 class SimpleComponent extends React.Component{
 constructor(props){
 super(props) //initalization of props 
 }
 render(){
-   const {tech}=this.props
+   const {tech,projects}=this.props
 
     return(
         <div>
@@ -13,6 +14,10 @@ render(){
         </div>
     )
 }
+}
+SimpleComponent.propTypes={
+    tech:PropTypes.array,
+    projects:PropTypes.array
 }
 export default SimpleComponent
 
