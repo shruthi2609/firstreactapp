@@ -1,16 +1,10 @@
-import clothing from './WOHOC/cdata'
-import electronic from './WOHOC/edata'
-import FilterProductsClothing from "./WHOC/FilterProductsClothing"
-import FilterProductsElectronic from './WHOC/FilterProductsElectronic'
-import SimpleComponent from './SimpleAppClassComponent/SimpleComponent'
+import ContactManagerComp from "./ContactManager.js/ContactManagerComp";
+import contactDetails from "./ContactManager.js/contactDetails";
 function App(){
-    return(
-        <div>
-        {/*   <FilterProductsClothing data={clothing} storename="Clothing Store"></FilterProductsClothing>
-          <FilterProductsClothing data={electronic} storename="Electronic Store"></FilterProductsClothing>
-        <FilterProductsElectronic data={electronic} storename='Electronic Store'></FilterProductsElectronic>*/}
-        <SimpleComponent tech="React JS" projects={["indian bank","nielsen",'nestle']}></SimpleComponent>
-        </div>
-    )
+  return(
+    <div>
+    <ContactManagerComp data={contactDetails}></ContactManagerComp>
+    </div>
+  )
 }
-export default App
+export default App;
