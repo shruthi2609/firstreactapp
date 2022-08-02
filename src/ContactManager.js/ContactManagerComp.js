@@ -8,22 +8,21 @@ class ContactManagerComp extends React.Component{
             ipUser:"",
             ipPhone:"",
             ipEmail:"",
-            ipAddress:""
+            ipAddress:"",
+            update:false,
+            uid:-1
         }
     }
-    
-   handleUsername=(e)=>{
-        this.setState({ipUser:e.target.value})
-    }
-    handleEmail=(e)=>{
-        this.setState({ipEmail:e.target.value})
-    }
-    handlePhone=(e)=>{
-        this.setState({ipPhone:e.target.value})
-    }
-    handleAddress=(e)=>{
-        this.setState({ipAddress:e.target.value})
-    }
+   handleChange=(e,key)=>{
+    if(key==='uname')
+    this.setState({ipUser:e.target.value})
+    if(key==='phone')
+    this.setState({ipPhone:e.target.value})
+    if(key==='email')
+    this.setState({ipEmail:e.target.value})
+    if(key==='addr')
+    this.setState({ipAddress:e.target.value})    
+   }
     
     handleContact=(e)=>{
         e.preventDefault()
@@ -37,16 +36,42 @@ class ContactManagerComp extends React.Component{
         let newData=[...this.state.contactinfo,obj]
         this.setState({contactinfo:newData})   
     }
+    handleDelete=(e,itemid)=>{
+      const result=this.state.contactinfo.filter((item)=>item.id!==itemid)
+      this.setState({contactinfo:result})
+    }
+    toggleUpdate=()=>{
+        this.setState({update:!this.state.update})
+    }
+    setUpdateMsg=(e,itemid)=>{
+        e.preventDefault()
+        this.toggleUpdate()   
+        this.setState({uid:itemid})
+    }
+    handleUpdate=(e)=>{
+        e.preventDefault()
+        let temp=[...this.state.contactinfo]
+        let obj=temp.find((item)=>item.id===this.state.uid)
+        obj.fname=this.state.ipUser
+        this.setState({contactinfo:temp})
+        this.setState({uid:-1})
+        this.toggleUpdate()
+    }
     render(){
-        console.log(this.state.contactinfo)
         return(
             <div>
+                {
+                this.state.update?<h1>Attn:Enter your new values</h1>:<h1></h1>
+                }
                 <form>
-                Username:<input type='text' onChange={(e)=>this.handleUsername(e)}></input>
-                Phone:<input type='text' onChange={(e)=>this.handlePhone(e)}></input>
-                Email:<input type='text' onChange={(e)=>this.handleEmail(e)}></input>
-                Address:<input type='text' onChange={(e)=>this.handleAddress(e)}></input>
-                <button onClick={(e)=>this.handleContact(e)}>add contact</button>
+                Username:<input type='text' onChange={(e)=>this.handleChange(e,'uname')}></input>
+                Phone:<input type='text' onChange={(e)=>this.handleChange(e,'phone')}></input>
+                Email:<input type='text' onChange={(e)=>this.handleChange(e,'email')}></input>
+                Address:<input type='text' onChange={(e)=>this.handleChange(e,'addr')}></input>
+                {
+                    this.state.update?<button onClick={(e)=>this.handleUpdate(e)}>update contact</button>:<button onClick={(e)=>this.handleContact(e)}>add contact</button>
+                }
+                
                 </form>
             All Contacts:
             {
@@ -55,6 +80,8 @@ class ContactManagerComp extends React.Component{
                         <h2>{item.fname}</h2>
                         <h3>{item.phone} {item.email}</h3>
                         <p>{item.address}</p>
+                        <button onClick={(e)=>this.handleDelete(e,item.id)}>delete</button>
+                        <button onClick={(e)=>this.setUpdateMsg(e,item.id)}>update</button>
                     </div>
                 ))
             }

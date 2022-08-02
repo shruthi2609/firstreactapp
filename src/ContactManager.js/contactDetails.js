@@ -15,7 +15,7 @@ const contactDetails=[
     },
     {
         id:2,
-        fname:'peter',
+        fname:'henry',
         phone:29839827,
         email:'peter@gmail.com',
         address:'Delhi IND'
