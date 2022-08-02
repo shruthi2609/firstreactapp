@@ -1,9 +1,12 @@
-import ContactManagerComp from "./ContactManager.js/ContactManagerComp";
-import contactDetails from "./ContactManager.js/contactDetails";
+import DblClickComponent from "./ReactEventsDemo/DblClickEvent";
+import LoginFormComponent from "./ReactEventsDemo/LoginFormComponent";
+
+
 function App(){
   return(
     <div>
-    <ContactManagerComp data={contactDetails}></ContactManagerComp>
+<DblClickComponent username='john'></DblClickComponent>
+ 
     </div>
   )
 }
