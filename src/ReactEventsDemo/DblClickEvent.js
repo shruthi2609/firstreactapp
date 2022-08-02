@@ -1,5 +1,7 @@
 import React  from "react";
-
+DblClickComponent.defaultProps={
+    username:'XUser'
+}
 class DblClickComponent extends React.Component{
     constructor(props){
         super(props)
@@ -32,7 +34,5 @@ class DblClickComponent extends React.Component{
         )
     }
 }
-DblClickComponent.defaultProps={
-    username:'XUser'
-}
+
 export default DblClickComponent
