@@ -1,11 +1,18 @@
-import DblClickComponent from "./ReactEventsDemo/DblClickEvent";
-import LoginFormComponent from "./ReactEventsDemo/LoginFormComponent";
+import BlogSearch from "./APICalls/BlogSearch";
+import CRUDOps from "./APICalls/CRUDOps";
+import LCMAPICall from "./APICalls/LCMAPICall";
+import SimpleAPICall from "./APICalls/SimpleAPICall";
+
 
 
 function App(){
   return(
     <div>
-<DblClickComponent username='john'></DblClickComponent>
+{/*<SimpleAPICall></SimpleAPICall>
+<LCMAPICall></LCMAPICall>
+<BlogSearch></BlogSearch>*/}
+<CRUDOps></CRUDOps>
+
  
     </div>
   )
