@@ -1,17 +1,12 @@
-import BlogSearch from "./APICalls/BlogSearch";
-import CRUDOps from "./APICalls/CRUDOps";
-import LCMAPICall from "./APICalls/LCMAPICall";
-import SimpleAPICall from "./APICalls/SimpleAPICall";
+import ImageSearch from "./APICalls/ImageSearch";
 
 
 
 function App(){
   return(
     <div>
-{/*<SimpleAPICall></SimpleAPICall>
-<LCMAPICall></LCMAPICall>
-<BlogSearch></BlogSearch>*/}
-<CRUDOps></CRUDOps>
+
+    <ImageSearch></ImageSearch>
 
  
     </div>
