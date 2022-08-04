@@ -14,6 +14,7 @@ class CompletedComponent extends React.Component{
         const {completedTask,changeCompletion,deleteTask}=this.props
         return(
             <div>
+                { console.log("completed render")}
                 <h2>Completed Tasks</h2>
                 {
                     completedTask.map((item)=>(

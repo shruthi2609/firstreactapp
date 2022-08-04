@@ -38,6 +38,7 @@ class TaskManager extends React.Component{
         return result
      }
     render(){
+        console.log("parent render")
         return(
             <div>
                 <h1>Task Manager</h1>

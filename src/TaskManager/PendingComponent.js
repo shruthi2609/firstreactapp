@@ -13,7 +13,9 @@ class PendingComponent extends React.Component{
         }
         const {pendingTask,changeCompletion}=this.props
         return(
+           
             <div style={styleBg}>
+                { console.log("pending render")}
                 <h2>Pending Tasks</h2>
                 {
                     pendingTask.map((item)=>(
