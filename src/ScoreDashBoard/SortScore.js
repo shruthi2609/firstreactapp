@@ -2,7 +2,7 @@ import React from "react";
 import response from "./response";
 import "./LeaderBoard.css"
 import Header from "./Header";
-class SortName extends React.Component{
+class SortScore extends React.Component{
     constructor(props){
         super(props)
         this.state={
@@ -10,15 +10,14 @@ class SortName extends React.Component{
         }
     }
     componentDidMount(){
-        console.log("did mount")
-       const sorteddata=[...response.list].sort((a,b)=>a.name.localeCompare(b.name))
-       this.setState({data:sorteddata})
+       const sorteddata=[...response.list].sort((a,b)=>Number(a.points)-Number(b.points))
+      this.setState({data:sorteddata})
     }
     render(){
         return(
             <div>
-                <Header value={1}></Header>
-                <h2>Sorted based on Names</h2>
+                <Header value={4}></Header>
+                <h2>Sorted based on Rank</h2>
                 <div>
                     <table>
                         <thead>
@@ -48,4 +47,4 @@ class SortName extends React.Component{
 
     }
 }
-export default SortName
+export default SortScore
