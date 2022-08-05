@@ -27,13 +27,15 @@ class Header extends React.Component{
     }
     render(){
         const {fname,age,rank,score}=this.state
-     
+     let activeStyle = {
+    textDecoration: "underline",
+  }
         return(
             <div>
                 <Link to='/rank'><button className={rank?'btn-primary':'btn-secondary'}>Rank</button></Link>
                 <Link to='/name'><button className={fname?'btn-primary':'btn-secondary'}>Name</button></Link>
                 <Link to='/age'><button className={age?'btn-primary':'btn-secondary'}>Age</button></Link>
-            <Link to='/score'><button className={score?'btn-primary':'btn-secondary'}>Score</button></Link>
+           
                
             </div>
         )
