@@ -1,50 +1,27 @@
 import React from "react";
-import {BrowserRouter,Route,Routes,Link, NavLink} from 'react-router-dom'
-import Dashboard from "./NestedRoutes/DashBoard";
-import Login from "./NestedRoutes/Login";
-import PageNotFound from "./NestedRoutes/PageNotFound";
-import UserPage from "./NestedRoutes/UserPage";
-
-
+import { BrowserRouter, Switch ,Route,NavLink} from "react-router-dom";
+import { DashBoard, HomePage, Login } from "./V5Components/VFiveComponents";
+import './App.css'
 function App(){
   return(
     <div>
-      <BrowserRouter>
-    { /* <NavLink to='/user/login' style={({isActive})=>(
-        {color:isActive?'red':'blue'}
-      )}>Login
-        
-      </NavLink>
-      <NavLink to='/user/dashboard' style={({isActive})=>(
-        {color:isActive?'red':'blue'}
-      )}>Dashboard
-        
-      </NavLink>*/}
-      <NavLink to='/user/login'>
-      {
-        ({isActive})=>(
-          <button className={isActive?'btn-primary':'btn-danger'}>login</button>
-        )
-      }
-      </NavLink>
-      <NavLink to='/user/dashboard'>
-      {
-        ({isActive})=>(
-          <button className={isActive?'btn-primary':'btn-danger'}>Dashboard</button>
-        )
-      }
-      </NavLink>
-        <Routes>
-        <Route path='/user' element={<UserPage></UserPage>}>
-          <Route  path='login' element={<Login></Login>}>
-          </Route>
-          <Route  path='dashboard' element={<Dashboard></Dashboard>}></Route>
-          <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
-        </Route>
-        <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
+     <BrowserRouter>
+     <div>
+      <NavLink to='/home' activeClassName="active-link">Home</NavLink>
+      <NavLink to='/dashboard' activeClassName="active-link">Dashboard</NavLink>
+      <NavLink to='/login' activeClassName="active-link">Login</NavLink>
+      </div>
+     
+    
+     
+      <Switch>
+        <Route path='/home'> <HomePage></HomePage></Route>
+        <Route path='/dashboard'> <DashBoard></DashBoard></Route>
+        <Route path='/login'> <Login></Login></Route>
 
-        </Routes>
-      </BrowserRouter>
+      </Switch>
+
+     </BrowserRouter>
     </div>
   )
 }
